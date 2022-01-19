@@ -50,7 +50,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		updateById(w, r)
 	default:
 		w.WriteHeader(http.StatusMethodNotAllowed)
-
 		return
 	}
 }
@@ -91,6 +90,7 @@ func post(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.WriteHeader(http.StatusCreated)
+	_, _ = w.Write([]byte("success"))
 }
 
 // get retrieves the data from database and writes data as a JSON.
